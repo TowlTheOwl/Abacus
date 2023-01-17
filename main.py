@@ -30,6 +30,11 @@ while run:
             mouse_pos = pygame.mouse.get_pos()
             for row in rows:
                 row.check_collision(mouse_pos)
+
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_r]:
+        for row in rows:
+            row.reset()
     
     draw(screen)
     pygame.display.update()
