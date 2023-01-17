@@ -42,6 +42,9 @@ class Row:
             bead_height = height//num_beads
             self.beads.append(Bead(i, (self.x, i * bead_height + self.y), self.width, bead_height, self.color))
     
+    def reset(self):
+        self.upper, self.lower = [np.array([1,0]), np.array([0, 1, 1, 1, 1])]
+
     def print_row(self):
         data = np.concatenate((self.upper, self.lower))
         print(np.expand_dims(np.asarray(data), axis=1))
